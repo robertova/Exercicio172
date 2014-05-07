@@ -22,7 +22,7 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         initComponents();
         try {
-            String[] dbs = Cliente.main("readdb").split(" ");
+            String[] dbs = Cliente.client("readdb").split(" ");
             DefaultListModel d = new DefaultListModel();
             for (String s: dbs) {
                 d.addElement(s);
@@ -188,7 +188,7 @@ public class Principal extends javax.swing.JFrame {
     private void jList1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList1ValueChanged
         try {
             if (evt.getValueIsAdjusting() == false) {
-                String[] dbs = Cliente.main("list::" + jList1.getSelectedValue()).split(" ");
+                String[] dbs = Cliente.client("list::" + jList1.getSelectedValue()).split(" ");
                 DefaultListModel d = new DefaultListModel();
                 for (String s : dbs) {
                     d.addElement(s);
@@ -204,7 +204,7 @@ public class Principal extends javax.swing.JFrame {
     private void jList2ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList2ValueChanged
         try {
             if (evt.getValueIsAdjusting() == false) {
-                jTextField1.setText(Cliente.main("num::" + jList1.getSelectedValue() + "::" + jList2.getSelectedValue()));
+                jTextField1.setText(Cliente.client("num::" + jList1.getSelectedValue() + "::" + jList2.getSelectedValue()));
             }
 
         } catch (Exception ex) {
@@ -214,7 +214,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
-            jTextArea1.setText(Cliente.main("del::" + jList1.getSelectedValue() + "::" + jList2.getSelectedValue()));
+            jTextArea1.setText(Cliente.client("del::" + jList1.getSelectedValue() + "::" + jList2.getSelectedValue()));
         } catch (Exception ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -223,7 +223,7 @@ public class Principal extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         if (!jTextField2.getText().equals("")) {
             try {
-                jTextArea1.setText(Cliente.main("ren::" + jList1.getSelectedValue() + "::" + jList2.getSelectedValue() + "::" + jTextField2.getText()));
+                jTextArea1.setText(Cliente.client("ren::" + jList1.getSelectedValue() + "::" + jList2.getSelectedValue() + "::" + jTextField2.getText()));
             } catch (Exception ex) {
                 Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
             }

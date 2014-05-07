@@ -12,7 +12,7 @@ import java.net.Socket;
  */
 public class Cliente {
 
-    public static String main(String comando) throws Exception {
+    public static String client(String comando) throws Exception {
         Socket conexion = new Socket("localhost", 6785);
         DataOutputStream salida = new DataOutputStream(conexion.getOutputStream());
         BufferedReader entrada = new BufferedReader(new InputStreamReader(conexion.getInputStream()));

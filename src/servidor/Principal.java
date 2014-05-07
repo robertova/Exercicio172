@@ -97,7 +97,7 @@ public class Principal extends javax.swing.JFrame {
                 p.setVisible(true);              
             }
         });
-        Servidor.main();
+        Servidor.server();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

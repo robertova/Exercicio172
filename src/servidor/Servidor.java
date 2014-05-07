@@ -19,7 +19,7 @@ import java.sql.SQLException;
 
 public class Servidor {    
     
-    public static void main() throws Exception {
+    public static void server() throws Exception {
 
         Connection con;
         con = DriverManager.getConnection("jdbc:mysql://localhost:3307","root","root");
